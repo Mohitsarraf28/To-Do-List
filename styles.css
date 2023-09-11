@@ -19,7 +19,7 @@ h1 {
 }
 
 input[type="text"] {
-    width: 95%;
+    width: 100%;
     padding: 10px;
     margin-bottom: 10px;
     border: 1px solid #ccc;
@@ -48,4 +48,22 @@ li {
     border-radius: 5px;
     margin-bottom: 5px;
     padding: 5px 10px;
+    transition: all 0.3s ease; /* Added transition property */
+}
+
+li:hover {
+    background-color: #e0e0e0;
+    transform: scale(1.05); /* Added hover effect */
+}
+
+li.fade-in {
+    opacity: 1;
+    transform: translateX(0);
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Added transition for fade-in */
+}
+
+li.fade-out {
+    opacity: 0;
+    transform: translateX(-100%);
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Added transition for fade-out */
 }

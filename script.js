@@ -10,12 +10,17 @@ document.addEventListener("DOMContentLoaded", function () {
             li.innerHTML = `
                 ${taskText} <button class="delete">Delete</button>
             `;
+            li.classList.add("fade-in"); // Apply fade-in animation class
             taskList.appendChild(li);
             taskInput.value = "";
 
+            // Delete button functionality
             const deleteButton = li.querySelector(".delete");
             deleteButton.addEventListener("click", function () {
-                taskList.removeChild(li);
+                li.classList.add("fade-out"); // Apply fade-out animation class
+                setTimeout(function () {
+                    taskList.removeChild(li);
+                }, 300); // Animation duration in milliseconds
             });
         }
     });
